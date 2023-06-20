@@ -1,4 +1,4 @@
-#Tue Jun 20 15:21:11 EEST 2023
-base.0=D\:\\flutterApps\\value\\autocars\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+#Tue Jun 20 19:25:19 EEST 2023
+base.0=C\:\\Users\\Tags6\\OneDrive\\Documents\\GitHub\\autocar\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

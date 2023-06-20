@@ -18,7 +18,7 @@ class _DetailsStateProduct extends State<DetailsProduct> {
     'https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Chevrolet_Aveo_LT_hatch_front.jpg/1200px-Chevrolet_Aveo_LT_hatch_front.jpg',
     'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/04-06_Chevrolet_Aveo_sedan_3.jpg/1200px-04-06_Chevrolet_Aveo_sedan_3.jpg',
   ];
-  CarouselController _carouselController = CarouselController();
+  final CarouselController _carouselController = CarouselController();
   int myindex = 0;
   @override
   Widget build(BuildContext context) {
@@ -121,7 +121,7 @@ class _DetailsStateProduct extends State<DetailsProduct> {
                       Align(
                         alignment: Alignment.centerRight,
                         child: Text(
-                          "داو كالوس كبوط ",
+                          "داو كالوس كبوط++ ",
                           style: TextStyle(
                               color: color1,
                               fontWeight: FontWeight.bold,
