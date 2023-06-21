@@ -1,10 +1,9 @@
 import 'dart:async';
-
+import 'package:animated_widgets/widgets/opacity_animated.dart';
+import 'package:animated_widgets/widgets/translation_animated.dart';
 import 'package:autocars/UI/pages/login&singup/login.dart';
 import 'package:autocars/consts/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:page_animation_transition/animations/right_to_left_faded_transition.dart';
-import 'package:page_animation_transition/page_animation_transition.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -14,13 +13,14 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  scheduleTimeout() async {
-    Timer(const Duration(seconds: 1), () {
-      Navigator.pop(context);
+  // bool _showImage = false;
 
-      Navigator.of(context).push(PageAnimationTransition(
-          page: const Loginpage(),
-          pageAnimationType: RightToLeftFadedTransition()));
+  scheduleTimeout() async {
+    Timer(const Duration(seconds: 2), () {
+      Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(builder: (BuildContext context) => Loginpage()),
+          (Route<dynamic> route) => route is Loginpage);
     });
   }
 
@@ -35,7 +35,18 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       backgroundColor: color1,
       body: Center(
-        child: Image.asset("assets/images/onscreen.png"),
+        child: TranslationAnimatedWidget.tween(
+          enabled: true,
+          delay: const Duration(milliseconds: 1500),
+          curve: Curves.easeInOut,
+          translationDisabled: const Offset(0, 200),
+          translationEnabled: const Offset(0, -100),
+          child: OpacityAnimatedWidget.tween(
+              enabled: true,
+              opacityDisabled: 0,
+              opacityEnabled: 1,
+              child: Image.asset("assets/images/onscreen.png")),
+        ),
       ),
     );
   }

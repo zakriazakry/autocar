@@ -1,8 +1,6 @@
 import 'package:autocars/UI/pages/home/home.dart';
 import 'package:autocars/consts/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:page_animation_transition/animations/right_to_left_faded_transition.dart';
-import 'package:page_animation_transition/page_animation_transition.dart';
 
 class Singuppage extends StatefulWidget {
   const Singuppage({super.key});
@@ -29,9 +27,14 @@ class _SinguppageState extends State<Singuppage> {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      Navigator.of(context).push(PageAnimationTransition(
-                          page: const HomePage(),
-                          pageAnimationType: RightToLeftFadedTransition()));
+                      Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) => HomePage(
+                                 
+                                    category: "سيارات",
+                                  )),
+                          (Route<dynamic> route) => route is HomePage);
                     },
                     child: RichText(
                       text: const TextSpan(

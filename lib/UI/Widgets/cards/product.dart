@@ -1,6 +1,6 @@
 // ignore_for_file: must_be_immutable
 
-import 'package:autocars/UI/pages/info_product/details.dart';
+import 'package:autocars/UI/pages/info_product/details_car.dart';
 import 'package:autocars/consts/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:page_animation_transition/animations/right_to_left_faded_transition.dart';
@@ -8,7 +8,8 @@ import 'package:page_animation_transition/page_animation_transition.dart';
 
 class ProductCard extends StatefulWidget {
   int index;
-  ProductCard({super.key, required this.index});
+  bool isfavorit;
+  ProductCard({super.key, required this.index, required this.isfavorit});
 
   @override
   State<ProductCard> createState() => _ProductCardState();
@@ -26,6 +27,7 @@ class _ProductCardState extends State<ProductCard> {
             pageAnimationType: RightToLeftFadedTransition()));
       },
       child: Container(
+        margin: const EdgeInsets.symmetric(vertical: 3),
         height: 150,
         decoration: BoxDecoration(
             color: color5,
@@ -35,29 +37,26 @@ class _ProductCardState extends State<ProductCard> {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            Column(
+            const Column(
               children: [
-                Hero(
-                  tag: 'title${widget.index.toString()}',
-                  child: const Text("داو كالوس كبوط",
-                      style: TextStyle(
-                        color: color1,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
-                      )),
-                ),
-                const SizedBox(
+                Text("داو كالوس كبوط",
+                    style: TextStyle(
+                      color: color1,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                    )),
+                SizedBox(
                   height: 40,
                 ),
-                const Text("الزاوية | Daewoo",
+                Text("الزاوية | Daewoo",
                     style: TextStyle(
                         color: color1,
                         fontWeight: FontWeight.w300,
                         fontSize: 16)),
-                const SizedBox(
+                SizedBox(
                   height: 5,
                 ),
-                const Text(
+                Text(
                   textDirection: TextDirection.rtl,
                   "3 د.ل",
                   style: TextStyle(
@@ -74,14 +73,11 @@ class _ProductCardState extends State<ProductCard> {
               child: Stack(
                 alignment: Alignment.topRight,
                 children: [
-                  Hero(
-                    tag: 'image${widget.index}',
-                    child: Image.network(
-                      "https://jadefansite.com/images/b749e4kalos1_2g.jpg",
-                      width: 150,
-                      height: 150,
-                      fit: BoxFit.cover,
-                    ),
+                  Image.network(
+                    "https://jadefansite.com/images/b749e4kalos1_2g.jpg",
+                    width: 150,
+                    height: 150,
+                    fit: BoxFit.cover,
                   ),
                   Padding(
                     padding: const EdgeInsets.all(5.0),
@@ -90,7 +86,12 @@ class _ProductCardState extends State<ProductCard> {
                         backgroundColor: color5,
                         child: IconButton(
                             onPressed: () {},
-                            icon: const Icon(Icons.star_border))),
+                            icon: widget.isfavorit
+                                ? const Icon(
+                                    Icons.star,
+                                    color: Colors.amber,
+                                  )
+                                : const Icon(Icons.star_border))),
                   )
                 ],
               ),

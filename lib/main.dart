@@ -1,5 +1,5 @@
+import 'package:autocars/UI/pages/splash_screen.dart';
 import 'package:flutter/material.dart';
-import 'UI/pages/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +14,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: const SplashScreen(),
       theme: ThemeData(
-       
         useMaterial3: true,
         fontFamily: 'font1',
       ),

@@ -1,0 +1,4 @@
+#Tue Jun 20 19:40:40 EEST 2023
+base.0=C\:\\Users\\Tags6\\OneDrive\\Documents\\GitHub\\autocar\\build\\app\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

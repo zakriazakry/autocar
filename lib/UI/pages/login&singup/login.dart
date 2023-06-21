@@ -30,9 +30,14 @@ class _LoginpageState extends State<Loginpage> {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      Navigator.of(context).push(PageAnimationTransition(
-                          page: const HomePage(),
-                          pageAnimationType: RightToLeftFadedTransition()));
+                      Navigator.pushAndRemoveUntil(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) => HomePage(
+                                    category: "السيارات",
+                                 
+                                  )),
+                          (Route<dynamic> route) => route is HomePage);
                     },
                     child: RichText(
                       text: const TextSpan(
