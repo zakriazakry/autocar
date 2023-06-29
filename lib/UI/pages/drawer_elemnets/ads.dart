@@ -1,4 +1,4 @@
-import 'package:autocars/UI/Widgets/drawer/drawer_widget.dart';
+import 'package:autocars/UI/Widgets/drawer/drawer_widget_AR.dart';
 import 'package:autocars/UI/pages/add&editAds/add_ads_%20spareparts.dart';
 import 'package:autocars/UI/pages/add&editAds/add_ads_boat.dart';
 import 'package:autocars/UI/pages/add&editAds/add_ads_car.dart';
@@ -11,7 +11,9 @@ import 'package:page_animation_transition/animations/right_to_left_faded_transit
 import 'package:page_animation_transition/page_animation_transition.dart';
 
 import '../../../consts/colors.dart';
+import '../../../langs/Langauge.dart';
 import '../../Widgets/cards/adsCard.dart';
+import '../../Widgets/drawer/drawer_widget_EN.dart';
 import '../search/searchPage.dart';
 
 class MyAds extends StatefulWidget {
@@ -25,23 +27,43 @@ class _MyAdsState extends State<MyAds> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      endDrawer: const DrawerPage(),
-      appBar: AppBar(
-        iconTheme: const IconThemeData(
-          color: color5,
-        ),
-        backgroundColor: color3,
-        leading: IconButton(
-            onPressed: () {
-              Navigator.of(context).push(PageAnimationTransition(
-                  page: const SearchPage(),
-                  pageAnimationType: RightToLeftFadedTransition()));
-            },
-            icon: const Icon(
-              Icons.search,
-              color: color5,
-            )),
-      ),
+      drawer: IsAR() ? null : const DrawerPageEN(),
+      endDrawer: IsAR() ? const DrawerPage() : null,
+      appBar: IsAR()
+          ? AppBar(
+              iconTheme: const IconThemeData(
+                color: color5,
+              ),
+              backgroundColor: color3,
+              leading: IconButton(
+                  onPressed: () {
+                    Navigator.of(context).push(PageAnimationTransition(
+                        page: const SearchPage(),
+                        pageAnimationType: RightToLeftFadedTransition()));
+                  },
+                  icon: const Icon(
+                    Icons.search,
+                    color: color5,
+                  )),
+            )
+          : AppBar(
+              iconTheme: const IconThemeData(
+                color: color5,
+              ),
+              backgroundColor: color3,
+              actions: [
+                IconButton(
+                    onPressed: () {
+                      Navigator.of(context).push(PageAnimationTransition(
+                          page: const SearchPage(),
+                          pageAnimationType: RightToLeftFadedTransition()));
+                    },
+                    icon: const Icon(
+                      Icons.search,
+                      color: color5,
+                    ))
+              ],
+            ),
       floatingActionButton: SpeedDial(
         backgroundColor: color4,
         overlayColor: const Color.fromARGB(255, 0, 0, 0),
@@ -131,14 +153,15 @@ class _MyAdsState extends State<MyAds> {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
+          crossAxisAlignment:
+              IsAR() ? CrossAxisAlignment.end : CrossAxisAlignment.start,
           children: [
             const SizedBox(
               height: 30,
             ),
-            const Text(
-              "الإعلانات",
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            Text(
+              IsAR() ? ar['35'] : en['35'],
+              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
             const SizedBox(
               height: 20,

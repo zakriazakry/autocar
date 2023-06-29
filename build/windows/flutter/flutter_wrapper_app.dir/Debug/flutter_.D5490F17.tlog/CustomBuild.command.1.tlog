@@ -1,0 +1,10 @@
+^C:\USERS\TAGS6\ONEDRIVE\DOCUMENTS\GITHUB\AUTOCAR\WINDOWS\FLUTTER\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/Tags6/OneDrive/Documents/GitHub/autocar/windows -BC:/Users/Tags6/OneDrive/Documents/GitHub/autocar/build/windows --check-stamp-file C:/Users/Tags6/OneDrive/Documents/GitHub/autocar/build/windows/flutter/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

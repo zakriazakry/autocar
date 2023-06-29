@@ -1,0 +1,13 @@
+C:/Users/Tags6/OneDrive/Documents/GitHub/autocar/build/windows/CMakeFiles/INSTALL.dir
+C:/Users/Tags6/OneDrive/Documents/GitHub/autocar/build/windows/CMakeFiles/ALL_BUILD.dir
+C:/Users/Tags6/OneDrive/Documents/GitHub/autocar/build/windows/CMakeFiles/ZERO_CHECK.dir
+C:/Users/Tags6/OneDrive/Documents/GitHub/autocar/build/windows/flutter/CMakeFiles/flutter_wrapper_plugin.dir
+C:/Users/Tags6/OneDrive/Documents/GitHub/autocar/build/windows/flutter/CMakeFiles/flutter_wrapper_app.dir
+C:/Users/Tags6/OneDrive/Documents/GitHub/autocar/build/windows/flutter/CMakeFiles/flutter_assemble.dir
+C:/Users/Tags6/OneDrive/Documents/GitHub/autocar/build/windows/flutter/CMakeFiles/INSTALL.dir
+C:/Users/Tags6/OneDrive/Documents/GitHub/autocar/build/windows/runner/CMakeFiles/autocars.dir
+C:/Users/Tags6/OneDrive/Documents/GitHub/autocar/build/windows/runner/CMakeFiles/INSTALL.dir
+C:/Users/Tags6/OneDrive/Documents/GitHub/autocar/build/windows/runner/CMakeFiles/ALL_BUILD.dir
+C:/Users/Tags6/OneDrive/Documents/GitHub/autocar/build/windows/plugins/flutter_localization/CMakeFiles/flutter_localization_plugin.dir
+C:/Users/Tags6/OneDrive/Documents/GitHub/autocar/build/windows/plugins/flutter_localization/CMakeFiles/INSTALL.dir
+C:/Users/Tags6/OneDrive/Documents/GitHub/autocar/build/windows/plugins/flutter_localization/CMakeFiles/ALL_BUILD.dir

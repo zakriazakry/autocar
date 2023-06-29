@@ -2,18 +2,25 @@
 
 import 'package:autocars/UI/Widgets/cards/categoryCard.dart';
 import 'package:autocars/UI/Widgets/cards/product.dart';
+import 'package:autocars/UI/Widgets/drawer/drawer_widget_EN.dart';
 import 'package:autocars/UI/pages/search/searchPage.dart';
 import 'package:autocars/consts/colors.dart';
+import 'package:autocars/langs/Langauge.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:page_animation_transition/animations/right_to_left_faded_transition.dart';
 import 'package:page_animation_transition/page_animation_transition.dart';
 
-import '../../Widgets/drawer/drawer_widget.dart';
+import '../../Widgets/drawer/drawer_widget_AR.dart';
 
 class HomePage extends StatefulWidget {
-  String category;
-  HomePage({super.key, required this.category});
+  String category, name, langNumber;
+  HomePage({
+    super.key,
+    required this.category,
+    required this.name,
+    required this.langNumber,
+  });
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -24,23 +31,43 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     List productsToDay = ["value1"];
     return Scaffold(
-        endDrawer: const DrawerPage(),
-        appBar: AppBar(
-          iconTheme: const IconThemeData(
-            color: color5,
-          ),
-          backgroundColor: color3,
-          leading: IconButton(
-              onPressed: () {
-                Navigator.of(context).push(PageAnimationTransition(
-                    page: const SearchPage(),
-                    pageAnimationType: RightToLeftFadedTransition()));
-              },
-              icon: const Icon(
-                Icons.search,
-                color: color5,
-              )),
-        ),
+        drawer: IsAR() ? null : const DrawerPageEN(),
+        endDrawer: IsAR() ? const DrawerPage() : null,
+        appBar: IsAR()
+            ? AppBar(
+                iconTheme: const IconThemeData(
+                  color: color5,
+                ),
+                backgroundColor: color3,
+                leading: IconButton(
+                    onPressed: () {
+                      Navigator.of(context).push(PageAnimationTransition(
+                          page: const SearchPage(),
+                          pageAnimationType: RightToLeftFadedTransition()));
+                    },
+                    icon: const Icon(
+                      Icons.search,
+                      color: color5,
+                    )),
+              )
+            : AppBar(
+                iconTheme: const IconThemeData(
+                  color: color5,
+                ),
+                backgroundColor: color3,
+                actions: [
+                  IconButton(
+                      onPressed: () {
+                        Navigator.of(context).push(PageAnimationTransition(
+                            page: const SearchPage(),
+                            pageAnimationType: RightToLeftFadedTransition()));
+                      },
+                      icon: const Icon(
+                        Icons.search,
+                        color: color5,
+                      ))
+                ],
+              ),
         body: RefreshIndicator(
           onRefresh: () async {
             //refresh method
@@ -72,9 +99,9 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                       ),
-                      const Text(
-                        "العروض",
-                        style: TextStyle(
+                      Text(
+                        IsAR() ? ar['20'] : en['20'],
+                        style: const TextStyle(
                             fontSize: 18, fontWeight: FontWeight.bold),
                       ),
                     ],
@@ -90,39 +117,40 @@ class _HomePageState extends State<HomePage> {
                       scrollDirection: Axis.horizontal,
                       children: [
                         CategoryCard(
-                          isactive:
-                              widget.category == "السيارات" ? true : false,
+                          numberlang: "21",
+                          isactive: widget.langNumber == "21" ? true : false,
                           image: 'assets/icons_elemnets/car.png',
-                          name: "السيارات",
+                          name: IsAR() ? ar["21"] : en["21"],
                         ),
                         CategoryCard(
-                          isactive:
-                              widget.category == "قطع غيار" ? true : false,
+                          numberlang: "22",
+                          isactive: widget.langNumber == "22" ? true : false,
                           image: 'assets/icons_elemnets/repair-tool.png',
-                          name: "قطع غيار",
+                          name: IsAR() ? ar["22"] : en["22"],
                         ),
                         CategoryCard(
-                          isactive:
-                              widget.category == "الإطارات" ? true : false,
+                          numberlang: "23",
+                          isactive: widget.langNumber == "23" ? true : false,
                           image: 'assets/icons_elemnets/wheel.png',
-                          name: "الإطارات",
+                          name: IsAR() ? ar["23"] : en["23"],
                         ),
                         CategoryCard(
-                          isactive:
-                              widget.category == "دراجات نارية" ? true : false,
+                          numberlang: "24",
+                          isactive: widget.langNumber == "24" ? true : false,
                           image: 'assets/icons_elemnets/motorcycle.png',
-                          name: "دراجات نارية",
+                          name: IsAR() ? ar["24"] : en["24"],
                         ),
                         CategoryCard(
-                          isactive:
-                              widget.category == "الشاحنات" ? true : false,
+                          numberlang: "25",
+                          isactive: widget.langNumber == "25" ? true : false,
                           image: 'assets/icons_elemnets/truck.png',
-                          name: "الشاحنات",
+                          name: IsAR() ? ar["25"] : en["25"],
                         ),
                         CategoryCard(
-                          isactive: widget.category == "القوارب" ? true : false,
+                          isactive: widget.langNumber == "26" ? true : false,
                           image: 'assets/icons_elemnets/boat.png',
-                          name: "القوارب",
+                          name: IsAR() ? ar["26"] : en["26"],
+                          numberlang: "26",
                         ),
                       ],
                     ),
@@ -131,16 +159,16 @@ class _HomePageState extends State<HomePage> {
                     height: 20,
                   ),
                   Text(
-                    widget.category,
+                    widget.name,
                     style: const TextStyle(
                         fontWeight: FontWeight.bold, fontSize: 20),
                   ),
                   const SizedBox(
                     height: 15,
                   ),
-                  const Text(
-                    "اليوم",
-                    style: TextStyle(
+                  Text(
+                    IsAR() ? ar["27"] : en["27"],
+                    style: const TextStyle(
                         fontWeight: FontWeight.w300,
                         fontSize: 15,
                         color: Colors.grey),
@@ -152,6 +180,7 @@ class _HomePageState extends State<HomePage> {
                   */
                   for (int i = 0; i < productsToDay.length; i++)
                     ProductCard(
+                      category: widget.category,
                       index: i,
                       isfavorit: false,
                     ) // this is for loop element
@@ -162,9 +191,9 @@ class _HomePageState extends State<HomePage> {
                     height: 15,
                   ),
 
-                  const Text(
-                    "الأمس",
-                    style: TextStyle(
+                  Text(
+                    IsAR() ? ar["28"] : en["28"],
+                    style: const TextStyle(
                         fontWeight: FontWeight.w300,
                         fontSize: 15,
                         color: Colors.grey),
@@ -175,14 +204,15 @@ class _HomePageState extends State<HomePage> {
 // if U run this the hero is return error
 // بسبب الزدواجيه في التاق
                   for (int i = 0; i < productsToDay.length; i++)
-                    ProductCard(index: i, isfavorit: false),
+                    ProductCard(
+                        index: i, isfavorit: false, category: widget.category),
                   const SizedBox(
                     height: 15,
                   ),
 
-                  const Text(
-                    "أقدم",
-                    style: TextStyle(
+                  Text(
+                    IsAR() ? ar["29"] : en["29"],
+                    style: const TextStyle(
                         fontWeight: FontWeight.w300,
                         fontSize: 15,
                         color: Colors.grey),
@@ -194,7 +224,8 @@ class _HomePageState extends State<HomePage> {
 // // بسبب الزدواجيه في التاق
                   // for (int i = 0; i < productsToDay.length; i++)
                   for (int i = 0; i < 3; i++)
-                    ProductCard(index: i, isfavorit: true),
+                    ProductCard(
+                        index: i, isfavorit: true, category: widget.category),
                 ],
               ),
             ),

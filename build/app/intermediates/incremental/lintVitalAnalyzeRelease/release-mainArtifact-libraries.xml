@@ -4,6 +4,32 @@
       jars="C:\Users\Tags6\OneDrive\Documents\GitHub\autocar\build\app\intermediates\flutter\release\libs.jar"
       resolved="__local_aars__:C:\Users\Tags6\OneDrive\Documents\GitHub\autocar\build\app\intermediates\flutter\release\libs.jar:unspecified"/>
   <library
+      name="C:\Users\Tags6\OneDrive\Documents\GitHub\autocar\android@@:shared_preferences_android::release"
+      jars="C:\Users\Tags6\OneDrive\Documents\GitHub\autocar\build\shared_preferences_android\.transforms\5e8357e6b87a49574d91762d167bdd2b\transformed\out\jars\classes.jar;C:\Users\Tags6\OneDrive\Documents\GitHub\autocar\build\shared_preferences_android\.transforms\5e8357e6b87a49574d91762d167bdd2b\transformed\out\jars\libs\R.jar"
+      resolved="io.flutter.plugins.sharedpreferences:shared_preferences_android:unspecified"
+      folder="C:\Users\Tags6\OneDrive\Documents\GitHub\autocar\build\shared_preferences_android\.transforms\5e8357e6b87a49574d91762d167bdd2b\transformed\out"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="C:\Users\Tags6\OneDrive\Documents\GitHub\autocar\android@@:flutter_localization::release"
+      jars="C:\Users\Tags6\OneDrive\Documents\GitHub\autocar\build\flutter_localization\.transforms\500374703788d511a9ee64648c71629f\transformed\out\jars\classes.jar;C:\Users\Tags6\OneDrive\Documents\GitHub\autocar\build\flutter_localization\.transforms\500374703788d511a9ee64648c71629f\transformed\out\jars\libs\R.jar"
+      resolved="com.mastertipsy.flutter_localization:flutter_localization:unspecified"
+      folder="C:\Users\Tags6\OneDrive\Documents\GitHub\autocar\build\flutter_localization\.transforms\500374703788d511a9ee64648c71629f\transformed\out"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
       name="io.flutter:flutter_embedding_release:1.0.0-2a3401c9bbb5a9a9aec74d4f735d18a9dd3ebf2d@jar"
       jars="C:\Users\Tags6\.gradle\caches\modules-2\files-2.1\io.flutter\flutter_embedding_release\1.0.0-2a3401c9bbb5a9a9aec74d4f735d18a9dd3ebf2d\211826699fdbec9a3b3a9f5a4f0f49a07e53e033\flutter_embedding_release-1.0.0-2a3401c9bbb5a9a9aec74d4f735d18a9dd3ebf2d.jar"
       resolved="io.flutter:flutter_embedding_release:1.0.0-2a3401c9bbb5a9a9aec74d4f735d18a9dd3ebf2d"/>
@@ -42,9 +68,9 @@
       jars="C:\Users\Tags6\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlinx\kotlinx-coroutines-core-jvm\1.5.2\f4cc07a50437659e0043e7da762809a46932b6a0\kotlinx-coroutines-core-jvm-1.5.2.jar"
       resolved="org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.5.2"/>
   <library
-      name="org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.30@jar"
-      jars="C:\Users\Tags6\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-jdk8\1.5.30\5fd47535cc85f9e24996f939c2de6583991481b0\kotlin-stdlib-jdk8-1.5.30.jar"
-      resolved="org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.30"/>
+      name="org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.10@jar"
+      jars="C:\Users\Tags6\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-jdk8\1.7.10\d70d7d2c56371f7aa18f32e984e3e2e998fe9081\kotlin-stdlib-jdk8-1.7.10.jar"
+      resolved="org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.10"/>
   <library
       name="org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.7.10@jar"
       jars="C:\Users\Tags6\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-jdk7\1.7.10\1ef73fee66f45d52c67e2aca12fd945dbe0659bf\kotlin-stdlib-jdk7-1.7.10.jar"
@@ -61,18 +87,6 @@
       name="io.flutter:x86_64_release:1.0.0-2a3401c9bbb5a9a9aec74d4f735d18a9dd3ebf2d@jar"
       jars="C:\Users\Tags6\.gradle\caches\modules-2\files-2.1\io.flutter\x86_64_release\1.0.0-2a3401c9bbb5a9a9aec74d4f735d18a9dd3ebf2d\355c4b06bc4b69fb924a641705ccc924a6dacba6\x86_64_release-1.0.0-2a3401c9bbb5a9a9aec74d4f735d18a9dd3ebf2d.jar"
       resolved="io.flutter:x86_64_release:1.0.0-2a3401c9bbb5a9a9aec74d4f735d18a9dd3ebf2d"/>
-  <library
-      name="org.jetbrains.kotlin:kotlin-stdlib:1.7.10@jar"
-      jars="C:\Users\Tags6\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib\1.7.10\d2abf9e77736acc4450dc4a3f707fa2c10f5099d\kotlin-stdlib-1.7.10.jar"
-      resolved="org.jetbrains.kotlin:kotlin-stdlib:1.7.10"/>
-  <library
-      name="org.jetbrains.kotlin:kotlin-stdlib-common:1.7.10@jar"
-      jars="C:\Users\Tags6\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-common\1.7.10\bac80c520d0a9e3f3673bc2658c6ed02ef45a76a\kotlin-stdlib-common-1.7.10.jar"
-      resolved="org.jetbrains.kotlin:kotlin-stdlib-common:1.7.10"/>
-  <library
-      name="org.jetbrains:annotations:13.0@jar"
-      jars="C:\Users\Tags6\.gradle\caches\modules-2\files-2.1\org.jetbrains\annotations\13.0\919f0dfe192fb4e063e7dacadee7f8bb9a2672a9\annotations-13.0.jar"
-      resolved="org.jetbrains:annotations:13.0"/>
   <library
       name="androidx.lifecycle:lifecycle-common-java8:2.2.0@jar"
       jars="C:\Users\Tags6\.gradle\caches\modules-2\files-2.1\androidx.lifecycle\lifecycle-common-java8\2.2.0\cd3478503da69b1a7e0319bd2d1389943db9b364\lifecycle-common-java8-2.2.0.jar"
@@ -288,4 +302,16 @@
       symbolFile="R.txt"
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
+  <library
+      name="org.jetbrains.kotlin:kotlin-stdlib:1.7.10@jar"
+      jars="C:\Users\Tags6\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib\1.7.10\d2abf9e77736acc4450dc4a3f707fa2c10f5099d\kotlin-stdlib-1.7.10.jar"
+      resolved="org.jetbrains.kotlin:kotlin-stdlib:1.7.10"/>
+  <library
+      name="org.jetbrains.kotlin:kotlin-stdlib-common:1.7.10@jar"
+      jars="C:\Users\Tags6\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-common\1.7.10\bac80c520d0a9e3f3673bc2658c6ed02ef45a76a\kotlin-stdlib-common-1.7.10.jar"
+      resolved="org.jetbrains.kotlin:kotlin-stdlib-common:1.7.10"/>
+  <library
+      name="org.jetbrains:annotations:13.0@jar"
+      jars="C:\Users\Tags6\.gradle\caches\modules-2\files-2.1\org.jetbrains\annotations\13.0\919f0dfe192fb4e063e7dacadee7f8bb9a2672a9\annotations-13.0.jar"
+      resolved="org.jetbrains:annotations:13.0"/>
 </libraries>

@@ -1,4 +1,6 @@
 import 'package:autocars/consts/colors.dart';
+import 'package:autocars/langs/Langauge.dart';
+import 'package:autocars/main.dart';
 import 'package:flutter/material.dart';
 
 class AddAdsCar extends StatefulWidget {
@@ -18,7 +20,8 @@ class _AddAdsCarState extends State<AddAdsCar> {
         child: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
+            crossAxisAlignment:
+                IsAR() ? CrossAxisAlignment.end : CrossAxisAlignment.start,
             children: [
               // custom appbar
               Row(
@@ -29,9 +32,10 @@ class _AddAdsCarState extends State<AddAdsCar> {
                         Navigator.pop(context);
                       },
                       icon: const Icon(Icons.arrow_back_rounded)),
-                  const Text(
-                    "إنشاء اعلان",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
+                  Text(
+                    IsAR() ? ar['55'] : en['55'],
+                    style: const TextStyle(
+                        fontWeight: FontWeight.bold, fontSize: 17),
                   ),
                 ],
               ),
@@ -44,7 +48,7 @@ class _AddAdsCarState extends State<AddAdsCar> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(
-                    color: Colors.black,
+                    color: isDark ? color5 : color1,
                     width: 0.5,
                   ),
                 ),
@@ -52,9 +56,8 @@ class _AddAdsCarState extends State<AddAdsCar> {
                   textDirection: TextDirection.rtl,
                   keyboardType: TextInputType.emailAddress,
                   maxLines: 1,
-                  obscureText: true,
                   decoration: InputDecoration(
-                    hintText: 'عنوان الإعلان',
+                    hintText: IsAR() ? ar['56'] : en['56'],
                     hintTextDirection: TextDirection.rtl,
                     border: OutlineInputBorder(
                       borderSide: BorderSide.none,
@@ -77,17 +80,22 @@ class _AddAdsCarState extends State<AddAdsCar> {
                     ),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        border: Border.all(width: 0.8)),
-                    child: const Row(
+                        border: Border.all(
+                          width: 0.8,
+                          color: isDark ? color5 : color1,
+                        )),
+                    child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        Text("فئة السيارة",
-                            style: TextStyle(
-                                fontSize: 14, fontWeight: FontWeight.bold)),
-                        SizedBox(
+                        Flexible(
+                          child: Text(IsAR() ? ar['57'] : en['57'],
+                              style: const TextStyle(
+                                  fontSize: 14, fontWeight: FontWeight.bold)),
+                        ),
+                        const SizedBox(
                           width: 20,
                         ),
-                        Icon(Icons.add)
+                        const Icon(Icons.add)
                       ],
                     ),
                   ),
@@ -99,20 +107,25 @@ class _AddAdsCarState extends State<AddAdsCar> {
                     ),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        border: Border.all(width: 0.8)),
-                    child: const Row(
+                        border: Border.all(
+                          width: 0.8,
+                          color: isDark ? color5 : color1,
+                        )),
+                    child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        SizedBox(
+                        const SizedBox(
                           width: 20,
                         ),
-                        Text("نوع السيارة",
-                            style: TextStyle(
-                                fontSize: 14, fontWeight: FontWeight.bold)),
-                        SizedBox(
+                        Flexible(
+                          child: Text(IsAR() ? ar['58'] : en['58'],
+                              style: const TextStyle(
+                                  fontSize: 14, fontWeight: FontWeight.bold)),
+                        ),
+                        const SizedBox(
                           width: 20,
                         ),
-                        Icon(Icons.add)
+                        const Icon(Icons.add)
                       ],
                     ),
                   ),
@@ -121,61 +134,73 @@ class _AddAdsCarState extends State<AddAdsCar> {
               const SizedBox(
                 height: 20,
               ),
-              const Text("نوع الوقود",
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
+              Text(IsAR() ? ar['59'] : en['59'],
+                  style: const TextStyle(
+                      fontSize: 14, fontWeight: FontWeight.bold)),
               const SizedBox(
                 height: 15,
               ),
               SizedBox(
                 height: 60,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 8, horizontal: 16),
-                      margin: const EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: const Color.fromARGB(255, 235, 235, 235)),
-                      child: const Text("هجين",
-                          style: TextStyle(
-                              fontSize: 14, fontWeight: FontWeight.bold)),
-                    ),
-                    Container(
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 8, horizontal: 16),
-                      margin: const EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: const Color.fromARGB(255, 235, 235, 235)),
-                      child: const Text("إلكتروني",
-                          style: TextStyle(
-                              fontSize: 14, fontWeight: FontWeight.bold)),
-                    ),
-                    Container(
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 8, horizontal: 16),
-                      margin: const EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: const Color.fromARGB(255, 235, 235, 235)),
-                      child: const Text("بترول",
-                          style: TextStyle(
-                              fontSize: 14, fontWeight: FontWeight.bold)),
-                    ),
-                    Container(
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 8, horizontal: 16),
-                      margin: const EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: const Color.fromARGB(255, 235, 235, 235)),
-                      child: const Text("ديزل",
-                          style: TextStyle(
-                              fontSize: 14, fontWeight: FontWeight.bold)),
-                    ),
-                  ],
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 8, horizontal: 16),
+                        margin: const EdgeInsets.all(8),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: isDark
+                                ? color1
+                                : const Color.fromARGB(255, 235, 235, 235)),
+                        child: Text(IsAR() ? ar['60'] : en['60'],
+                            style: const TextStyle(
+                                fontSize: 14, fontWeight: FontWeight.bold)),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 8, horizontal: 16),
+                        margin: const EdgeInsets.all(8),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: isDark
+                                ? color1
+                                : const Color.fromARGB(255, 235, 235, 235)),
+                        child: Text(IsAR() ? ar['61'] : en['61'],
+                            style: const TextStyle(
+                                fontSize: 14, fontWeight: FontWeight.bold)),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 8, horizontal: 16),
+                        margin: const EdgeInsets.all(8),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: isDark
+                                ? color1
+                                : const Color.fromARGB(255, 235, 235, 235)),
+                        child: Text(IsAR() ? ar['62'] : en['62'],
+                            style: const TextStyle(
+                                fontSize: 14, fontWeight: FontWeight.bold)),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 8, horizontal: 16),
+                        margin: const EdgeInsets.all(8),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: isDark
+                                ? color1
+                                : const Color.fromARGB(255, 235, 235, 235)),
+                        child: Text(IsAR() ? ar['62'] : en['62'],
+                            style: const TextStyle(
+                                fontSize: 14, fontWeight: FontWeight.bold)),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               const SizedBox(
@@ -192,17 +217,22 @@ class _AddAdsCarState extends State<AddAdsCar> {
                     ),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        border: Border.all(width: 0.8)),
-                    child: const Row(
+                        border: Border.all(
+                          width: 0.8,
+                          color: isDark ? color5 : color1,
+                        )),
+                    child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        Text("الناقل",
-                            style: TextStyle(
-                                fontSize: 14, fontWeight: FontWeight.bold)),
-                        SizedBox(
+                        Flexible(
+                          child: Text(IsAR() ? ar['64'] : en['64'],
+                              style: const TextStyle(
+                                  fontSize: 14, fontWeight: FontWeight.bold)),
+                        ),
+                        const SizedBox(
                           width: 20,
                         ),
-                        Icon(Icons.add)
+                        const Icon(Icons.add)
                       ],
                     ),
                   ),
@@ -214,20 +244,25 @@ class _AddAdsCarState extends State<AddAdsCar> {
                     ),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        border: Border.all(width: 0.8)),
-                    child: const Row(
+                        border: Border.all(
+                          width: 0.8,
+                          color: isDark ? color5 : color1,
+                        )),
+                    child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        SizedBox(
+                        const SizedBox(
                           width: 20,
                         ),
-                        Text("لون السيارة",
-                            style: TextStyle(
-                                fontSize: 14, fontWeight: FontWeight.bold)),
-                        SizedBox(
+                        Flexible(
+                          child: Text(IsAR() ? ar['65'] : en['65'],
+                              style: const TextStyle(
+                                  fontSize: 14, fontWeight: FontWeight.bold)),
+                        ),
+                        const SizedBox(
                           width: 20,
                         ),
-                        Icon(Icons.add)
+                        const Icon(Icons.add)
                       ],
                     ),
                   ),
@@ -247,17 +282,22 @@ class _AddAdsCarState extends State<AddAdsCar> {
                     ),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        border: Border.all(width: 0.8)),
-                    child: const Row(
+                        border: Border.all(
+                          width: 0.8,
+                          color: isDark ? color5 : color1,
+                        )),
+                    child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        Text("المدينة",
-                            style: TextStyle(
-                                fontSize: 14, fontWeight: FontWeight.bold)),
-                        SizedBox(
+                        Flexible(
+                          child: Text(IsAR() ? ar['66'] : en['66'],
+                              style: const TextStyle(
+                                  fontSize: 14, fontWeight: FontWeight.bold)),
+                        ),
+                        const SizedBox(
                           width: 20,
                         ),
-                        Icon(Icons.add)
+                        const Icon(Icons.add)
                       ],
                     ),
                   ),
@@ -269,20 +309,25 @@ class _AddAdsCarState extends State<AddAdsCar> {
                     ),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        border: Border.all(width: 0.8)),
-                    child: const Row(
+                        border: Border.all(
+                          width: 0.8,
+                          color: isDark ? color5 : color1,
+                        )),
+                    child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        SizedBox(
+                        const SizedBox(
                           width: 20,
                         ),
-                        Text("سنة الصنع",
-                            style: TextStyle(
-                                fontSize: 14, fontWeight: FontWeight.bold)),
-                        SizedBox(
+                        Flexible(
+                          child: Text(IsAR() ? ar['67'] : en['67'],
+                              style: const TextStyle(
+                                  fontSize: 14, fontWeight: FontWeight.bold)),
+                        ),
+                        const SizedBox(
                           width: 20,
                         ),
-                        Icon(Icons.add)
+                        const Icon(Icons.add)
                       ],
                     ),
                   ),
@@ -291,8 +336,9 @@ class _AddAdsCarState extends State<AddAdsCar> {
               const SizedBox(
                 height: 20,
               ),
-              const Text("حالة السيارة",
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
+              Text(IsAR() ? ar['68'] : en['68'],
+                  style: const TextStyle(
+                      fontSize: 15, fontWeight: FontWeight.bold)),
 
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -302,10 +348,13 @@ class _AddAdsCarState extends State<AddAdsCar> {
                         const EdgeInsets.symmetric(vertical: 8, horizontal: 30),
                     margin: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: const Color.fromARGB(255, 235, 235, 235)),
-                    child: const Text("السيارة جديدة",
-                        style: TextStyle(
+                      borderRadius: BorderRadius.circular(20),
+                      color: isDark
+                          ? color1
+                          : const Color.fromARGB(255, 231, 231, 231),
+                    ),
+                    child: Text(IsAR() ? ar['69'] : en['69'],
+                        style: const TextStyle(
                             fontSize: 14, fontWeight: FontWeight.bold)),
                   ),
                   Container(
@@ -313,10 +362,13 @@ class _AddAdsCarState extends State<AddAdsCar> {
                         const EdgeInsets.symmetric(vertical: 8, horizontal: 30),
                     margin: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: const Color.fromARGB(255, 235, 235, 235)),
-                    child: const Text("السيارة مستعملة",
-                        style: TextStyle(
+                      borderRadius: BorderRadius.circular(20),
+                      color: isDark
+                          ? color1
+                          : const Color.fromARGB(255, 231, 231, 231),
+                    ),
+                    child: Text(IsAR() ? ar['70'] : en['70'],
+                        style: const TextStyle(
                             fontSize: 14, fontWeight: FontWeight.bold)),
                   ),
                 ],
@@ -324,16 +376,20 @@ class _AddAdsCarState extends State<AddAdsCar> {
               const SizedBox(
                 height: 20,
               ),
-              const Text("الصور",
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
+              Text(IsAR() ? ar['71'] : en['71'],
+                  style: const TextStyle(
+                      fontSize: 15, fontWeight: FontWeight.bold)),
               //===========add to image here action ========================
               Container(
                 margin: const EdgeInsets.all(9),
                 width: double.infinity,
                 height: 140,
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: const Color.fromARGB(255, 231, 231, 231)),
+                  borderRadius: BorderRadius.circular(10),
+                  color: isDark
+                      ? color1
+                      : const Color.fromARGB(255, 231, 231, 231),
+                ),
                 child: IconButton(
                     onPressed: () {},
                     icon: const Icon(
@@ -348,7 +404,7 @@ class _AddAdsCarState extends State<AddAdsCar> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(
-                    color: Colors.black,
+                    color: isDark ? color5 : color1,
                     width: 0.5,
                   ),
                 ),
@@ -356,9 +412,8 @@ class _AddAdsCarState extends State<AddAdsCar> {
                   textDirection: TextDirection.rtl,
                   keyboardType: TextInputType.number,
                   maxLines: 1,
-                  obscureText: true,
                   decoration: InputDecoration(
-                    hintText: 'عدد المركبة',
+                    hintText: IsAR() ? ar['72'] : en['72'],
                     hintTextDirection: TextDirection.rtl,
                     border: OutlineInputBorder(
                       borderSide: BorderSide.none,
@@ -373,7 +428,7 @@ class _AddAdsCarState extends State<AddAdsCar> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(
-                    color: Colors.black,
+                    color: isDark ? color5 : color1,
                     width: 0.5,
                   ),
                 ),
@@ -382,7 +437,7 @@ class _AddAdsCarState extends State<AddAdsCar> {
                   keyboardType: TextInputType.phone,
                   maxLines: 1,
                   decoration: InputDecoration(
-                    hintText: 'رقم الهاتف',
+                    hintText: IsAR() ? ar['15'] : en['15'],
                     hintTextDirection: TextDirection.rtl,
                     border: OutlineInputBorder(
                       borderSide: BorderSide.none,
@@ -397,7 +452,7 @@ class _AddAdsCarState extends State<AddAdsCar> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(
-                    color: Colors.black,
+                    color: isDark ? color5 : color1,
                     width: 0.5,
                   ),
                 ),
@@ -406,7 +461,7 @@ class _AddAdsCarState extends State<AddAdsCar> {
                   keyboardType: TextInputType.text,
                   maxLines: 3,
                   decoration: InputDecoration(
-                    hintText: 'الوصف',
+                    hintText: IsAR() ? ar['73'] : en['73'],
                     hintTextDirection: TextDirection.rtl,
                     border: OutlineInputBorder(
                       borderSide: BorderSide.none,
@@ -427,8 +482,8 @@ class _AddAdsCarState extends State<AddAdsCar> {
                       decoration: BoxDecoration(
                           color: Colors.transparent,
                           borderRadius: BorderRadius.circular(10)),
-                      child: const Text("الغاء",
-                          style: TextStyle(
+                      child: Text(IsAR() ? ar['44'] : en['44'],
+                          style: const TextStyle(
                               fontSize: 15, fontWeight: FontWeight.bold)),
                     ),
                     Container(
@@ -437,8 +492,8 @@ class _AddAdsCarState extends State<AddAdsCar> {
                       decoration: BoxDecoration(
                           color: color4,
                           borderRadius: BorderRadius.circular(10)),
-                      child: const Text("نشر",
-                          style: TextStyle(
+                      child: Text(IsAR() ? ar['45'] : en['45'],
+                          style: const TextStyle(
                               fontSize: 15, fontWeight: FontWeight.bold)),
                     ),
                   ],

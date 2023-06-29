@@ -1,0 +1,12 @@
+com.mastertipsy.flutter_localization-jetified-window-1.0.0-beta04-0 C:\Users\Tags6\.gradle\caches\transforms-3\25cee5f028ac2a6b79fd6278ff5b59e2\transformed\jetified-window-1.0.0-beta04\res
+com.mastertipsy.flutter_localization-jetified-annotation-experimental-1.1.0-1 C:\Users\Tags6\.gradle\caches\transforms-3\6c0c163cc77ae6c91f9f7dfcd179c29c\transformed\jetified-annotation-experimental-1.1.0\res
+com.mastertipsy.flutter_localization-core-1.6.0-2 C:\Users\Tags6\.gradle\caches\transforms-3\7e9df2ac2213a6bd3cef0f2f27870d79\transformed\core-1.6.0\res
+com.mastertipsy.flutter_localization-jetified-window-java-1.0.0-beta04-3 C:\Users\Tags6\.gradle\caches\transforms-3\ae81e06d24c799147c26814497a2a305\transformed\jetified-window-java-1.0.0-beta04\res
+com.mastertipsy.flutter_localization-main-4 C:\Users\Tags6\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_localization-0.1.12\android\src\main\res
+com.mastertipsy.flutter_localization-release-5 C:\Users\Tags6\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_localization-0.1.12\android\src\release\res
+com.mastertipsy.flutter_localization-pngs-6 C:\Users\Tags6\OneDrive\Documents\GitHub\autocar\build\flutter_localization\generated\res\pngs\release
+com.mastertipsy.flutter_localization-resValues-7 C:\Users\Tags6\OneDrive\Documents\GitHub\autocar\build\flutter_localization\generated\res\resValues\release
+com.mastertipsy.flutter_localization-rs-8 C:\Users\Tags6\OneDrive\Documents\GitHub\autocar\build\flutter_localization\generated\res\rs\release
+com.mastertipsy.flutter_localization-mergeReleaseResources-9 C:\Users\Tags6\OneDrive\Documents\GitHub\autocar\build\flutter_localization\intermediates\incremental\release\mergeReleaseResources\merged.dir
+com.mastertipsy.flutter_localization-mergeReleaseResources-10 C:\Users\Tags6\OneDrive\Documents\GitHub\autocar\build\flutter_localization\intermediates\incremental\release\mergeReleaseResources\stripped.dir
+com.mastertipsy.flutter_localization-merged_res-11 C:\Users\Tags6\OneDrive\Documents\GitHub\autocar\build\flutter_localization\intermediates\merged_res\release

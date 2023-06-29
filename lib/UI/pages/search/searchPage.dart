@@ -1,10 +1,13 @@
 // ignore_for_file: file_names
 
 import 'package:autocars/UI/Widgets/cards/product.dart';
+import 'package:autocars/main.dart';
 import 'package:flutter/material.dart';
 
 import '../../../consts/colors.dart';
-import '../../Widgets/drawer/drawer_widget.dart';
+import '../../../langs/Langauge.dart';
+import '../../Widgets/drawer/drawer_widget_AR.dart';
+import '../../Widgets/drawer/drawer_widget_EN.dart';
 
 class SearchPage extends StatefulWidget {
   const SearchPage({super.key});
@@ -17,25 +20,26 @@ class _SearchPageState extends State<SearchPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      endDrawer: const DrawerPage(),
+      endDrawer: IsAR() ? const DrawerPage() : null,
+      drawer: !IsAR() ? const DrawerPageEN() : null,
       appBar: AppBar(
         iconTheme: const IconThemeData(
           color: color5,
         ),
-        leading: const Text(""), // treck
         backgroundColor: color3,
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
+          crossAxisAlignment:
+              IsAR() ? CrossAxisAlignment.end : CrossAxisAlignment.start,
           children: [
             const SizedBox(
               height: 30,
             ),
-            const Text(
-              "البحث",
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            Text(
+              IsAR() ? ar['30'] : en['30'],
+              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
             const SizedBox(
               height: 20,
@@ -47,7 +51,7 @@ class _SearchPageState extends State<SearchPage> {
                   width: 300,
                   height: 50,
                   decoration: BoxDecoration(
-                    color: color5,
+                    color: isDark ? color1 : color5,
                     borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(30),
                       bottomLeft: Radius.circular(30),
@@ -58,14 +62,16 @@ class _SearchPageState extends State<SearchPage> {
                     ),
                   ),
                   child: TextFormField(
-                    textDirection: TextDirection.rtl,
+                    textDirection:
+                        IsAR() ? TextDirection.rtl : TextDirection.ltr,
                     keyboardType: TextInputType.emailAddress,
                     maxLines: 1,
                     decoration: InputDecoration(
-                      hintText: 'اكتب شي للبحث عنه',
+                      hintText: IsAR() ? ar['31'] : en['31'],
                       hintStyle: const TextStyle(
                           fontSize: 14, fontWeight: FontWeight.w200),
-                      hintTextDirection: TextDirection.rtl,
+                      hintTextDirection:
+                          IsAR() ? TextDirection.rtl : TextDirection.ltr,
                       border: OutlineInputBorder(
                         borderSide: BorderSide.none,
                         borderRadius: BorderRadius.circular(10),
@@ -95,7 +101,9 @@ class _SearchPageState extends State<SearchPage> {
             const SizedBox(
               height: 20,
             ),
-            const Text(textDirection: TextDirection.rtl, "0 من النتائج"),
+            Text(
+                textDirection: TextDirection.rtl,
+                (IsAR() ? ar['32'] : en['32']) as String),
             const SizedBox(
               height: 20,
             ),
@@ -103,7 +111,8 @@ class _SearchPageState extends State<SearchPage> {
                 child: ListView.builder(
               itemCount: 1,
               itemBuilder: (context, index) {
-                return ProductCard(index: index, isfavorit: false);
+                return ProductCard(
+                    index: index, isfavorit: false, category: 'السيارات');
               },
             ))
           ],

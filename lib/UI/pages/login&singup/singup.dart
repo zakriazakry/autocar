@@ -1,6 +1,9 @@
 import 'package:autocars/UI/pages/home/home.dart';
 import 'package:autocars/consts/colors.dart';
+import 'package:autocars/langs/Langauge.dart';
 import 'package:flutter/material.dart';
+
+import '../../../main.dart';
 
 class Singuppage extends StatefulWidget {
   const Singuppage({super.key});
@@ -13,7 +16,7 @@ class _SinguppageState extends State<Singuppage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: color5,
+      backgroundColor: isDark ? const Color.fromARGB(255, 15, 15, 15) : color5,
       body: SafeArea(
           child: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
@@ -31,15 +34,16 @@ class _SinguppageState extends State<Singuppage> {
                           context,
                           MaterialPageRoute(
                               builder: (BuildContext context) => HomePage(
-                                 
+                                    langNumber: '21',
                                     category: "سيارات",
+                                    name: IsAR() ? ar['21'] : en['21'],
                                   )),
                           (Route<dynamic> route) => route is HomePage);
                     },
                     child: RichText(
-                      text: const TextSpan(
-                        text: 'تخطي',
-                        style: TextStyle(
+                      text: TextSpan(
+                        text: IsAR() ? ar['1'] : en['1'],
+                        style: const TextStyle(
                           fontFamily: "font1",
                           decoration: TextDecoration.underline,
                           fontWeight: FontWeight.bold,
@@ -48,10 +52,10 @@ class _SinguppageState extends State<Singuppage> {
                       ),
                     ),
                   ),
-                  const Text(
-                    "اشتراك",
+                  Text(
+                    IsAR() ? ar['10'] : en['10'],
                     style: TextStyle(
-                        color: color1,
+                        color: isDark ? color5 : color1,
                         fontWeight: FontWeight.bold,
                         fontSize: 16),
                   )
@@ -93,7 +97,9 @@ class _SinguppageState extends State<Singuppage> {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 border: Border.all(
-                  color: Colors.black,
+                  color: isDark
+                      ? const Color.fromARGB(255, 163, 162, 162)
+                      : color1,
                   width: 1.0,
                 ),
               ),
@@ -102,7 +108,7 @@ class _SinguppageState extends State<Singuppage> {
                 keyboardType: TextInputType.text,
                 maxLines: 1,
                 decoration: InputDecoration(
-                  hintText: 'الإسم الأول',
+                  hintText: IsAR() ? ar['12'] : en['12'],
                   hintTextDirection: TextDirection.rtl,
                   border: OutlineInputBorder(
                     borderSide: BorderSide.none,
@@ -116,7 +122,9 @@ class _SinguppageState extends State<Singuppage> {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 border: Border.all(
-                  color: Colors.black,
+                  color: isDark
+                      ? const Color.fromARGB(255, 163, 162, 162)
+                      : color1,
                   width: 1.0,
                 ),
               ),
@@ -125,7 +133,7 @@ class _SinguppageState extends State<Singuppage> {
                 keyboardType: TextInputType.text,
                 maxLines: 1,
                 decoration: InputDecoration(
-                  hintText: 'الإسم الثاني',
+                  hintText: IsAR() ? ar['13'] : en['13'],
                   hintTextDirection: TextDirection.rtl,
                   border: OutlineInputBorder(
                     borderSide: BorderSide.none,
@@ -139,7 +147,9 @@ class _SinguppageState extends State<Singuppage> {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 border: Border.all(
-                  color: Colors.black,
+                  color: isDark
+                      ? const Color.fromARGB(255, 163, 162, 162)
+                      : color1,
                   width: 1.0,
                 ),
               ),
@@ -148,7 +158,7 @@ class _SinguppageState extends State<Singuppage> {
                 keyboardType: TextInputType.emailAddress,
                 maxLines: 1,
                 decoration: InputDecoration(
-                  hintText: 'البريد الإلكتروني',
+                  hintText: IsAR() ? ar['14'] : en['14'],
                   hintTextDirection: TextDirection.rtl,
                   border: OutlineInputBorder(
                     borderSide: BorderSide.none,
@@ -162,7 +172,9 @@ class _SinguppageState extends State<Singuppage> {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 border: Border.all(
-                  color: Colors.black,
+                  color: isDark
+                      ? const Color.fromARGB(255, 163, 162, 162)
+                      : color1,
                   width: 1.0,
                 ),
               ),
@@ -171,7 +183,7 @@ class _SinguppageState extends State<Singuppage> {
                 keyboardType: TextInputType.phone,
                 maxLines: 1,
                 decoration: InputDecoration(
-                  hintText: 'رقم الهاتف',
+                  hintText: IsAR() ? ar['15'] : en['15'],
                   hintTextDirection: TextDirection.rtl,
                   border: OutlineInputBorder(
                     borderSide: BorderSide.none,
@@ -185,7 +197,9 @@ class _SinguppageState extends State<Singuppage> {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 border: Border.all(
-                  color: Colors.black,
+                  color: isDark
+                      ? const Color.fromARGB(255, 163, 162, 162)
+                      : color1,
                   width: 1.0,
                 ),
               ),
@@ -195,7 +209,7 @@ class _SinguppageState extends State<Singuppage> {
                 maxLines: 1,
                 obscureText: true,
                 decoration: InputDecoration(
-                  hintText: 'الرمز السري',
+                  hintText: IsAR() ? ar['16'] : en['16'],
                   hintTextDirection: TextDirection.rtl,
                   border: OutlineInputBorder(
                     borderSide: BorderSide.none,
@@ -209,7 +223,9 @@ class _SinguppageState extends State<Singuppage> {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 border: Border.all(
-                  color: Colors.black,
+                  color: isDark
+                      ? const Color.fromARGB(255, 163, 162, 162)
+                      : color1,
                   width: 1.0,
                 ),
               ),
@@ -219,7 +235,7 @@ class _SinguppageState extends State<Singuppage> {
                 maxLines: 1,
                 obscureText: true,
                 decoration: InputDecoration(
-                  hintText: 'تأكيد الرمز السري',
+                  hintText: IsAR() ? ar['17'] : en['17'],
                   hintTextDirection: TextDirection.rtl,
                   border: OutlineInputBorder(
                     borderSide: BorderSide.none,
@@ -238,8 +254,8 @@ class _SinguppageState extends State<Singuppage> {
                   top: 30, right: 10, left: 10, bottom: 5),
               decoration: BoxDecoration(
                   color: color3, borderRadius: BorderRadius.circular(10)),
-              child: const Text("تسجيل اشتراك",
-                  style: TextStyle(
+              child: Text(IsAR() ? ar['18'] : en['18'],
+                  style: const TextStyle(
                       color: color5,
                       fontWeight: FontWeight.bold,
                       fontSize: 20)),
@@ -252,8 +268,8 @@ class _SinguppageState extends State<Singuppage> {
                   top: 30, right: 10, left: 10, bottom: 5),
               decoration: BoxDecoration(
                   color: color1, borderRadius: BorderRadius.circular(10)),
-              child: const Text("إلغاء",
-                  style: TextStyle(
+              child: Text(IsAR() ? ar['6'] : en['6'],
+                  style: const TextStyle(
                       color: color5,
                       fontWeight: FontWeight.bold,
                       fontSize: 20)),
@@ -269,7 +285,9 @@ class _SinguppageState extends State<Singuppage> {
                   color: color1,
                   width: MediaQuery.of(context).size.width * 0.45,
                 ),
-                const Text("او"),
+                Text(
+                  IsAR() ? ar['19'] : en['19'],
+                ),
                 Container(
                   height: 0.7,
                   color: color1,
@@ -280,9 +298,10 @@ class _SinguppageState extends State<Singuppage> {
             Container(
                 margin: const EdgeInsets.only(right: 16, bottom: 20),
                 alignment: Alignment.centerRight,
-                child: const Text(
-                  "يمكنك تسجيل الدخول من الحسابات التالية",
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                child: Text(
+                  IsAR() ? ar['7'] : en['7'],
+                  style: const TextStyle(
+                      fontSize: 14, fontWeight: FontWeight.bold),
                 )),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -292,10 +311,16 @@ class _SinguppageState extends State<Singuppage> {
                       const EdgeInsets.symmetric(vertical: 10, horizontal: 25),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      border: Border.all(width: 1)),
+                      border: Border.all(
+                        width: 1,
+                        color: isDark
+                            ? const Color.fromARGB(255, 107, 106, 106)
+                            : color1,
+                      )),
                   child: Row(
                     children: [
-                      const Text("فيسبوك", style: TextStyle(fontSize: 18)),
+                      Text(IsAR() ? ar['8'] : en['8'],
+                          style: const TextStyle(fontSize: 18)),
                       const SizedBox(
                         width: 20,
                       ),
@@ -311,13 +336,19 @@ class _SinguppageState extends State<Singuppage> {
                       const EdgeInsets.symmetric(vertical: 10, horizontal: 25),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      border: Border.all(width: 1)),
+                      border: Border.all(
+                        width: 1,
+                        color: isDark
+                            ? const Color.fromARGB(255, 107, 106, 106)
+                            : color1,
+                      )),
                   child: Row(
                     children: [
                       const SizedBox(
                         width: 20,
                       ),
-                      const Text("قوقل", style: TextStyle(fontSize: 18)),
+                      Text(IsAR() ? ar['9'] : en['9'],
+                          style: const TextStyle(fontSize: 18)),
                       const SizedBox(
                         width: 20,
                       ),
@@ -334,14 +365,19 @@ class _SinguppageState extends State<Singuppage> {
               // crossAxisAlignment: CrossAxisAlignment.,
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                RichText(
-                  text: const TextSpan(
-                    text: 'تسجيل الدخول',
-                    style: TextStyle(
-                      fontFamily: "font1",
-                      decoration: TextDecoration.underline,
-                      fontWeight: FontWeight.bold,
-                      color: color3,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: RichText(
+                    text: TextSpan(
+                      text: IsAR() ? ar['2'] : en['2'],
+                      style: const TextStyle(
+                        fontFamily: "font1",
+                        decoration: TextDecoration.underline,
+                        fontWeight: FontWeight.bold,
+                        color: color3,
+                      ),
                     ),
                   ),
                 ),
@@ -352,10 +388,10 @@ class _SinguppageState extends State<Singuppage> {
                     margin:
                         const EdgeInsets.only(right: 16, bottom: 20, top: 10),
                     alignment: Alignment.centerRight,
-                    child: const Text(
-                      "اذا كان لديم حساب بالفعل,يرجي الضغط علي ",
-                      style:
-                          TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                    child: Text(
+                      IsAR() ? ar['11'] : en['11'],
+                      style: const TextStyle(
+                          fontSize: 14, fontWeight: FontWeight.bold),
                     )),
               ],
             ),

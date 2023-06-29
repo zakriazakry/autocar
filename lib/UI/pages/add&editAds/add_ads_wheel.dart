@@ -1,6 +1,9 @@
 import 'package:autocars/consts/colors.dart';
 import 'package:flutter/material.dart';
 
+import '../../../langs/Langauge.dart';
+import '../../../main.dart';
+
 class AddAdsWheel extends StatefulWidget {
   const AddAdsWheel({super.key});
 
@@ -29,9 +32,9 @@ class _AddAdsWheelState extends State<AddAdsWheel> {
                         Navigator.pop(context);
                       },
                       icon: const Icon(Icons.arrow_back_rounded)),
-                  const Text(
-                    "إنشاء اعلان",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
+                  Text(
+                    IsAR() ? ar['55'] : en['55'],
+                    style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
                   ),
                 ],
               ),
@@ -44,7 +47,7 @@ class _AddAdsWheelState extends State<AddAdsWheel> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(
-                    color: Colors.black,
+                    color: isDark ? color5 : color1,
                     width: 0.5,
                   ),
                 ),
@@ -52,9 +55,8 @@ class _AddAdsWheelState extends State<AddAdsWheel> {
                   textDirection: TextDirection.rtl,
                   keyboardType: TextInputType.emailAddress,
                   maxLines: 1,
-                  obscureText: true,
                   decoration: InputDecoration(
-                    hintText: 'عنوان الإعلان',
+                    hintText: IsAR() ? ar['56'] : en['56'],
                     hintTextDirection: TextDirection.rtl,
                     border: OutlineInputBorder(
                       borderSide: BorderSide.none,
@@ -77,17 +79,20 @@ class _AddAdsWheelState extends State<AddAdsWheel> {
                     ),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        border: Border.all(width: 0.8)),
-                    child: const Row(
+                        border: Border.all(
+                          width: 0.8,
+                          color: isDark ? color5 : color1,
+                        )),
+                    child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        Text("المدينة",
-                            style: TextStyle(
+                        Text(IsAR() ? ar['66'] : en['66'],
+                            style: const TextStyle(
                                 fontSize: 14, fontWeight: FontWeight.bold)),
-                        SizedBox(
+                        const SizedBox(
                           width: 20,
                         ),
-                        Icon(Icons.add)
+                        const Icon(Icons.add)
                       ],
                     ),
                   ),
@@ -99,20 +104,23 @@ class _AddAdsWheelState extends State<AddAdsWheel> {
                     ),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        border: Border.all(width: 0.8)),
-                    child: const Row(
+                        border: Border.all(
+                          width: 0.8,
+                          color: isDark ? color5 : color1,
+                        )),
+                    child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        SizedBox(
+                        const SizedBox(
                           width: 20,
                         ),
-                        Text("العلامة التجارية",
-                            style: TextStyle(
+                        Text(IsAR() ? ar['81'] : en['81'],
+                            style: const TextStyle(
                                 fontSize: 14, fontWeight: FontWeight.bold)),
-                        SizedBox(
+                        const SizedBox(
                           width: 20,
                         ),
-                        Icon(Icons.add)
+                        const Icon(Icons.add)
                       ],
                     ),
                   ),
@@ -121,8 +129,8 @@ class _AddAdsWheelState extends State<AddAdsWheel> {
               const SizedBox(
                 height: 20,
               ),
-              const Text("حالة الإطارات",
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
+              Text(IsAR() ? ar['82'] : en['82'],
+                  style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
 
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -133,9 +141,11 @@ class _AddAdsWheelState extends State<AddAdsWheel> {
                     margin: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
-                        color: const Color.fromARGB(255, 235, 235, 235)),
-                    child: const Text("الغيار جديدة",
-                        style: TextStyle(
+                        color: isDark
+                            ? color1
+                            : const Color.fromARGB(255, 235, 235, 235)),
+                    child: Text(IsAR() ? ar['83'] : en['83'],
+                        style: const TextStyle(
                             fontSize: 14, fontWeight: FontWeight.bold)),
                   ),
                   Container(
@@ -143,10 +153,16 @@ class _AddAdsWheelState extends State<AddAdsWheel> {
                         const EdgeInsets.symmetric(vertical: 8, horizontal: 30),
                     margin: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
+                        color: isDark
+                            ? color1
+                            : const Color.fromARGB(255, 235, 235, 235),
                         borderRadius: BorderRadius.circular(20),
-                        color: const Color.fromARGB(255, 235, 235, 235)),
-                    child: const Text("الغيار مستعملة",
-                        style: TextStyle(
+                        border: Border.all(
+                          width: 0.8,
+                          color: isDark ? color1 : color5,
+                        )),
+                    child:   Text(IsAR() ? ar['84'] : en['84'],
+                        style: const TextStyle(
                             fontSize: 14, fontWeight: FontWeight.bold)),
                   ),
                 ],
@@ -160,7 +176,7 @@ class _AddAdsWheelState extends State<AddAdsWheel> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(
-                    color: Colors.black,
+                    color: isDark ? color5 : color1,
                     width: 0.5,
                   ),
                 ),
@@ -169,7 +185,7 @@ class _AddAdsWheelState extends State<AddAdsWheel> {
                   keyboardType: TextInputType.phone,
                   maxLines: 1,
                   decoration: InputDecoration(
-                    hintText: 'الحجم',
+                    hintText: IsAR() ? ar['85'] : en['85'],
                     hintTextDirection: TextDirection.rtl,
                     border: OutlineInputBorder(
                       borderSide: BorderSide.none,
@@ -192,38 +208,44 @@ class _AddAdsWheelState extends State<AddAdsWheel> {
                     ),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        border: Border.all(width: 0.8)),
-                    child: const Row(
+                        border: Border.all(
+                          width: 0.8,
+                          color: isDark ? color5 : color1,
+                        )),
+                    child:   Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        Text("السعر",
-                            style: TextStyle(
+                        Text(IsAR() ? ar['78'] : en['78'],
+                            style: const TextStyle(
                                 fontSize: 14, fontWeight: FontWeight.bold)),
-                        SizedBox(
+                        const SizedBox(
                           width: 40,
                         ),
-                        Icon(Icons.add)
+                        const Icon(Icons.add)
                       ],
                     ),
                   ),
-                  const Text("اختار سعر قطع الإطار",
+                    Text(IsAR() ? ar['86'] : en['86'],
                       style:
-                          TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
+                          const TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
                 ],
               ),
               const SizedBox(
                 height: 20,
               ),
 
-              const Text("الصور",
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
+                Text(IsAR() ? ar['71'] : en['71'],
+                  style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
               Container(
                 margin: const EdgeInsets.all(9),
                 width: double.infinity,
                 height: 140,
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: const Color.fromARGB(255, 231, 231, 231)),
+                  borderRadius: BorderRadius.circular(10),
+                  color: isDark
+                      ? color1
+                      : const Color.fromARGB(255, 231, 231, 231),
+                ),
                 child: IconButton(
                     onPressed: () {},
                     icon: const Icon(
@@ -238,7 +260,7 @@ class _AddAdsWheelState extends State<AddAdsWheel> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(
-                    color: Colors.black,
+                    color: isDark ? color5 : color1,
                     width: 0.5,
                   ),
                 ),
@@ -247,7 +269,7 @@ class _AddAdsWheelState extends State<AddAdsWheel> {
                   keyboardType: TextInputType.phone,
                   maxLines: 1,
                   decoration: InputDecoration(
-                    hintText: 'رقم الهاتف',
+                    hintText: IsAR() ? ar['15'] : en['15'],
                     hintTextDirection: TextDirection.rtl,
                     border: OutlineInputBorder(
                       borderSide: BorderSide.none,
@@ -268,8 +290,8 @@ class _AddAdsWheelState extends State<AddAdsWheel> {
                       decoration: BoxDecoration(
                           color: Colors.transparent,
                           borderRadius: BorderRadius.circular(10)),
-                      child: const Text("الغاء",
-                          style: TextStyle(
+                      child:   Text(IsAR() ? ar['44'] : en['44'],
+                          style: const TextStyle(
                               fontSize: 15, fontWeight: FontWeight.bold)),
                     ),
                     Container(
@@ -278,8 +300,8 @@ class _AddAdsWheelState extends State<AddAdsWheel> {
                       decoration: BoxDecoration(
                           color: color4,
                           borderRadius: BorderRadius.circular(10)),
-                      child: const Text("نشر",
-                          style: TextStyle(
+                      child:   Text(IsAR() ? ar['80'] : en['80'],
+                          style: const TextStyle(
                               fontSize: 15, fontWeight: FontWeight.bold)),
                     ),
                   ],

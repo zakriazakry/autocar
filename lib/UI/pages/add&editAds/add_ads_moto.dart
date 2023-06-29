@@ -1,6 +1,9 @@
 import 'package:autocars/consts/colors.dart';
 import 'package:flutter/material.dart';
 
+import '../../../langs/Langauge.dart';
+import '../../../main.dart';
+
 class AddAdsTMoto extends StatefulWidget {
   const AddAdsTMoto({super.key});
 
@@ -29,9 +32,9 @@ class _AddAdsTMotoState extends State<AddAdsTMoto> {
                         Navigator.pop(context);
                       },
                       icon: const Icon(Icons.arrow_back_rounded)),
-                  const Text(
-                    "إنشاء اعلان",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
+                  Text(
+                    IsAR() ? ar['55'] : en['55'],
+                    style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
                   ),
                 ],
               ),
@@ -44,7 +47,7 @@ class _AddAdsTMotoState extends State<AddAdsTMoto> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(
-                    color: Colors.black,
+                    color: isDark ? color5 : color1,
                     width: 0.5,
                   ),
                 ),
@@ -52,9 +55,8 @@ class _AddAdsTMotoState extends State<AddAdsTMoto> {
                   textDirection: TextDirection.rtl,
                   keyboardType: TextInputType.emailAddress,
                   maxLines: 1,
-                  obscureText: true,
                   decoration: InputDecoration(
-                    hintText: 'عنوان الإعلان',
+                    hintText: IsAR() ? ar['56'] : en['56'],
                     hintTextDirection: TextDirection.rtl,
                     border: OutlineInputBorder(
                       borderSide: BorderSide.none,
@@ -77,17 +79,20 @@ class _AddAdsTMotoState extends State<AddAdsTMoto> {
                     ),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        border: Border.all(width: 0.8)),
-                    child: const Row(
+                        border: Border.all(
+                          width: 0.8,
+                          color: isDark ? color5 : color1,
+                        )),
+                    child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        Text("فئة الدراجة",
-                            style: TextStyle(
+                        Text(IsAR() ? ar['87'] : en['87'],
+                            style: const TextStyle(
                                 fontSize: 14, fontWeight: FontWeight.bold)),
-                        SizedBox(
+                        const SizedBox(
                           width: 20,
                         ),
-                        Icon(Icons.add)
+                        const Icon(Icons.add)
                       ],
                     ),
                   ),
@@ -99,20 +104,23 @@ class _AddAdsTMotoState extends State<AddAdsTMoto> {
                     ),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        border: Border.all(width: 0.8)),
-                    child: const Row(
+                        border: Border.all(
+                          width: 0.8,
+                          color: isDark ? color5 : color1,
+                        )),
+                    child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        SizedBox(
+                        const SizedBox(
                           width: 20,
                         ),
-                        Text("نوع الدراجة",
-                            style: TextStyle(
+                        Text(IsAR() ? ar['88'] : en['88'],
+                            style: const TextStyle(
                                 fontSize: 14, fontWeight: FontWeight.bold)),
-                        SizedBox(
+                        const SizedBox(
                           width: 20,
                         ),
-                        Icon(Icons.add)
+                        const Icon(Icons.add)
                       ],
                     ),
                   ),
@@ -121,8 +129,8 @@ class _AddAdsTMotoState extends State<AddAdsTMoto> {
               const SizedBox(
                 height: 20,
               ),
-              const Text("حالة الدراجة",
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
+              Text(IsAR() ? ar['89'] : en['89'],
+                  style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
 
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -132,10 +140,13 @@ class _AddAdsTMotoState extends State<AddAdsTMoto> {
                         const EdgeInsets.symmetric(vertical: 8, horizontal: 30),
                     margin: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: const Color.fromARGB(255, 235, 235, 235)),
-                    child: const Text("الدراجة جديدة",
-                        style: TextStyle(
+                      borderRadius: BorderRadius.circular(20),
+                      color: isDark
+                          ? color1
+                          : const Color.fromARGB(255, 235, 235, 235),
+                    ),
+                    child: Text(IsAR() ? ar['83'] : en['83'],
+                        style: const TextStyle(
                             fontSize: 14, fontWeight: FontWeight.bold)),
                   ),
                   Container(
@@ -143,10 +154,13 @@ class _AddAdsTMotoState extends State<AddAdsTMoto> {
                         const EdgeInsets.symmetric(vertical: 8, horizontal: 30),
                     margin: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: const Color.fromARGB(255, 235, 235, 235)),
-                    child: const Text("الدراجة مستعملة",
-                        style: TextStyle(
+                      borderRadius: BorderRadius.circular(20),
+                      color: isDark
+                          ? color1
+                          : const Color.fromARGB(255, 235, 235, 235),
+                    ),
+                    child: Text(IsAR() ? ar['84'] : en['84'],
+                        style: const TextStyle(
                             fontSize: 14, fontWeight: FontWeight.bold)),
                   ),
                 ],
@@ -165,17 +179,20 @@ class _AddAdsTMotoState extends State<AddAdsTMoto> {
                     ),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        border: Border.all(width: 0.8)),
-                    child: const Row(
+                        border: Border.all(
+                          width: 0.8,
+                          color: isDark ? color5 : color1,
+                        )),
+                    child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        Text("المدينة",
-                            style: TextStyle(
+                        Text(IsAR() ? ar['66'] : en['66'],
+                            style: const TextStyle(
                                 fontSize: 14, fontWeight: FontWeight.bold)),
-                        SizedBox(
+                        const SizedBox(
                           width: 20,
                         ),
-                        Icon(Icons.add)
+                        const Icon(Icons.add)
                       ],
                     ),
                   ),
@@ -187,20 +204,23 @@ class _AddAdsTMotoState extends State<AddAdsTMoto> {
                     ),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        border: Border.all(width: 0.8)),
-                    child: const Row(
+                        border: Border.all(
+                          width: 0.8,
+                          color: isDark ? color5 : color1,
+                        )),
+                    child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        SizedBox(
+                        const SizedBox(
                           width: 20,
                         ),
-                        Text("سنة الصنع",
-                            style: TextStyle(
+                        Text(IsAR() ? ar['90'] : en['90'],
+                            style: const TextStyle(
                                 fontSize: 14, fontWeight: FontWeight.bold)),
-                        SizedBox(
+                        const SizedBox(
                           width: 20,
                         ),
-                        Icon(Icons.add)
+                        const Icon(Icons.add)
                       ],
                     ),
                   ),
@@ -220,17 +240,20 @@ class _AddAdsTMotoState extends State<AddAdsTMoto> {
                     ),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        border: Border.all(width: 0.8)),
-                    child: const Row(
+                        border: Border.all(
+                          width: 0.8,
+                          color: isDark ? color5 : color1,
+                        )),
+                    child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        Text("السعر",
-                            style: TextStyle(
+                        Text(IsAR() ? ar['78'] : en['78'],
+                            style: const TextStyle(
                                 fontSize: 14, fontWeight: FontWeight.bold)),
-                        SizedBox(
+                        const SizedBox(
                           width: 20,
                         ),
-                        Icon(Icons.add)
+                        const Icon(Icons.add)
                       ],
                     ),
                   ),
@@ -242,20 +265,23 @@ class _AddAdsTMotoState extends State<AddAdsTMoto> {
                     ),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        border: Border.all(width: 0.8)),
-                    child: const Row(
+                        border: Border.all(
+                          width: 0.8,
+                          color: isDark ? color5 : color1,
+                        )),
+                    child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        SizedBox(
+                        const SizedBox(
                           width: 20,
                         ),
-                        Text("قدرة المحرك",
-                            style: TextStyle(
+                        Text(IsAR() ? ar['91'] : en['91'],
+                            style: const TextStyle(
                                 fontSize: 14, fontWeight: FontWeight.bold)),
-                        SizedBox(
+                        const SizedBox(
                           width: 20,
                         ),
-                        Icon(Icons.add)
+                        const Icon(Icons.add)
                       ],
                     ),
                   ),
@@ -270,7 +296,7 @@ class _AddAdsTMotoState extends State<AddAdsTMoto> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(
-                    color: Colors.black,
+                    color: isDark ? color5 : color1,
                     width: 0.5,
                   ),
                 ),
@@ -279,7 +305,7 @@ class _AddAdsTMotoState extends State<AddAdsTMoto> {
                   keyboardType: TextInputType.text,
                   maxLines: 3,
                   decoration: InputDecoration(
-                    hintText: 'الوصف',
+                    hintText: IsAR() ? ar['73'] : en['73'],
                     hintTextDirection: TextDirection.rtl,
                     border: OutlineInputBorder(
                       borderSide: BorderSide.none,
@@ -291,15 +317,18 @@ class _AddAdsTMotoState extends State<AddAdsTMoto> {
               const SizedBox(
                 height: 20,
               ),
-              const Text("الصور",
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
+              Text(IsAR() ? ar['71'] : en['71'],
+                  style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
               Container(
                 margin: const EdgeInsets.all(9),
                 width: double.infinity,
                 height: 140,
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: const Color.fromARGB(255, 231, 231, 231)),
+                  borderRadius: BorderRadius.circular(10),
+                  color: isDark
+                      ? color1
+                      : const Color.fromARGB(255, 235, 235, 235),
+                ),
                 child: IconButton(
                     onPressed: () {},
                     icon: const Icon(
@@ -315,7 +344,7 @@ class _AddAdsTMotoState extends State<AddAdsTMoto> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(
-                    color: Colors.black,
+                    color: isDark ? color5 : color1,
                     width: 0.5,
                   ),
                 ),
@@ -324,7 +353,7 @@ class _AddAdsTMotoState extends State<AddAdsTMoto> {
                   keyboardType: TextInputType.phone,
                   maxLines: 1,
                   decoration: InputDecoration(
-                    hintText: 'رقم الهاتف',
+                    hintText: IsAR() ? ar['15'] : en['15'],
                     hintTextDirection: TextDirection.rtl,
                     border: OutlineInputBorder(
                       borderSide: BorderSide.none,
@@ -345,8 +374,8 @@ class _AddAdsTMotoState extends State<AddAdsTMoto> {
                       decoration: BoxDecoration(
                           color: Colors.transparent,
                           borderRadius: BorderRadius.circular(10)),
-                      child: const Text("الغاء",
-                          style: TextStyle(
+                      child: Text(IsAR() ? ar['44'] : en['44'],
+                          style: const TextStyle(
                               fontSize: 15, fontWeight: FontWeight.bold)),
                     ),
                     Container(
@@ -355,8 +384,8 @@ class _AddAdsTMotoState extends State<AddAdsTMoto> {
                       decoration: BoxDecoration(
                           color: color4,
                           borderRadius: BorderRadius.circular(10)),
-                      child: const Text("نشر",
-                          style: TextStyle(
+                      child: Text(IsAR() ? ar['80'] : en['80'],
+                          style: const TextStyle(
                               fontSize: 15, fontWeight: FontWeight.bold)),
                     ),
                   ],

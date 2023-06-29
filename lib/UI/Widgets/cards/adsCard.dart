@@ -1,10 +1,12 @@
 // ignore_for_file: file_names
 
-import 'package:autocars/UI/pages/info_product/details_car_ads.dart';
+import 'package:autocars/UI/pages/info_product/_car/details_car_ads.dart';
 import 'package:autocars/consts/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:page_animation_transition/animations/right_to_left_faded_transition.dart';
 import 'package:page_animation_transition/page_animation_transition.dart';
+
+import '../../../main.dart';
 
 // ignore: must_be_immutable
 class AdsCard extends StatefulWidget {
@@ -32,7 +34,7 @@ class _AdsCardState extends State<AdsCard> {
       child: Container(
         height: 150,
         decoration: BoxDecoration(
-            color: color5,
+            color: isDark ? color1 : color5,
             borderRadius: BorderRadius.circular(7),
             border: Border.all(width: 0.3)),
         child: Row(
@@ -43,9 +45,9 @@ class _AdsCardState extends State<AdsCard> {
               children: [
                 Hero(
                   tag: 'title${widget.index.toString()}',
-                  child: const Text("داو كالوس كبوط",
+                  child: Text("داو كالوس كبوط",
                       style: TextStyle(
-                        color: color1,
+                        color: isDark ? color5 : color1,
                         fontWeight: FontWeight.bold,
                         fontSize: 18,
                       )),
@@ -53,9 +55,9 @@ class _AdsCardState extends State<AdsCard> {
                 const SizedBox(
                   height: 40,
                 ),
-                const Text("الزاوية | Daewoo",
+                Text("الزاوية | Daewoo",
                     style: TextStyle(
-                        color: color1,
+                        color: isDark ? color5 : color1,
                         fontWeight: FontWeight.w300,
                         fontSize: 16)),
                 const SizedBox(

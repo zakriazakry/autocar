@@ -42,6 +42,9 @@ dependencies:
   lottie: ^2.4.0
   animated_widgets: ^1.1.0
   flutter_speed_dial: ^7.0.0
+  shared_preferences: ^2.1.2
+  provider: ^6.0.5
+  flutter_localization: ^0.1.12
 dev_dependencies:
   flutter_test:
     sdk: flutter
